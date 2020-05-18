@@ -11,23 +11,19 @@ class SalaryCalculator
     player.sueldo + variable_bonus
   end
 
+  private
+
   def variable_bonus
     bonus = (individual_goal_percentage + goal_per_team_percentage) / 2
-    (bonus * player.bono) / 100
+    ((bonus * player.bono) / 100.0).truncate(2)
   end
 
   def individual_goal_percentage
-    percentage = (100 / goals_per_level[level_key]) * player.goles
-    validate_percentage(percentage)
+     (100.0 / goals_per_level[level_key]).truncate(2) * player.goles
   end
 
   def goal_per_team_percentage
-    percentage = (100 / team_goals_to_score) * team_goals_scored
-    validate_percentage(percentage)
-  end
-
-  def validate_percentage(percentage)
-    percentage > 100 ? 100 : percentage
+   (100.0 / team_goals_to_score).truncate(2) * team_goals_scored
   end
 
   def team_goals_to_score
