@@ -11,15 +11,17 @@ Installing rbenv, follow the instrucctions inside the next link:
 
 Run the next commands
 
-> rbenv install 2.7.1
-> rbenv local 2.7.1
-> gem install bundler
+`rbenv install 2.7.1`
+
+`rbenv local 2.7.1`
+
+`gem install bundler`
 
 Go to your terminal and inside of this project run:
 
-> bundle install
+`bundle install`
 
 Then run the server
-> rails server
+`rails server`
 
 Your app is ready, running on http://localhost:3000/
