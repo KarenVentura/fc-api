@@ -24,7 +24,12 @@ module V1
 
     def validate_schema
       schema = {
-        "required" => ["nombre", "nivel", "goles", "sueldo", "bono", "sueldo_completo", "equipo"]
+        "required" => ["nombre", "nivel", "goles", "sueldo", "bono", "sueldo_completo", "equipo"],
+        "properties" => {
+          "goles" => { "type" => "integer"},
+          "sueldo" => { "type" => "float"},
+          "bono" => { "type" => "float"}
+        }
       }
 
       JSON::Validator.validate!(schema, player_params.to_json, :list => true)
