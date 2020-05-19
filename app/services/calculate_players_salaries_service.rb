@@ -1,7 +1,8 @@
 class CalculatePlayersSalariesService
-  attr_reader :player_params, :team, :players
+  attr_reader :player_params, :team, :players, :success
 
   def initialize(player_params)
+    @success = true
     @player_params = player_params
     @team = Team.new(player_params)
     @players = []
