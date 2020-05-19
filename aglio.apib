@@ -1,0 +1,133 @@
+FORMAT: 1A
+HOST: http://localhost:3000
+
+# FC API
+
+La FC API te permite calcular el salario total de los jugadores del FC
+
+&nbsp;&nbsp;
+# Group Salarios
+
+## Salarios [/jugadores/salarios]
+
+### Actualizar Salarios [PATCH]
+
+El sueldo de los jugadores del Resuelve FC se compone de dos partes un sueldo fijo y un bono variable.
+La suma de estas dos partes es el sueldo de un jugador. El bono variable se compone de dos partes meta,
+de goles individual y meta de goles por equipo cada una tiene un peso de 50%.
+
+Este endpoint te permitirá hacer el cálculo del sueldo de los jugadores del Resuelve FC
+
++ Request (application/json)
+    + Headers
+
+            Accept: application/vnd.fc.v1+json
+
+    + Body
+
+            [
+              {
+                  "nombre":"Juan Perez",
+                  "nivel":"C",
+                  "goles":10,
+                  "sueldo":50000,
+                  "bono":25000,
+                  "sueldo_completo":null,
+                  "equipo":"rojo"
+              },
+              {
+                  "nombre":"EL Cuauh",
+                  "nivel":"Cuauh",
+                  "goles":30,
+                  "sueldo":100000,
+                  "bono":30000,
+                  "sueldo_completo":null,
+                  "equipo":"azul"
+              },
+              {
+                  "nombre":"Cosme Fulanito",
+                  "nivel":"A",
+                  "goles":7,
+                  "sueldo":20000,
+                  "bono":10000,
+                  "sueldo_completo":null,
+                  "equipo":"azul"
+
+              },
+              {
+                  "nombre":"El Rulo",
+                  "nivel":"B",
+                  "goles":9,
+                  "sueldo":30000,
+                  "bono":15000,
+                  "sueldo_completo":null,
+                  "equipo":"rojo"
+
+              }
+            ]
+
++ Response 200
+
+    + Headers
+
+            Accept: application/vnd.atipica.v1+json
+
+    + Body
+
+            [
+              {
+                  "nombre": "Juan Perez",
+                  "goles_minimos": 15,
+                  "goles": 10,
+                  "sueldo": 50000,
+                  "bono": 25000,
+                  "sueldo_completo": 67825.0,
+                  "equipo": "rojo"
+              },
+              {
+                  "nombre": "EL Cuauh",
+                  "goles_minimos": 20,
+                  "goles": 30,
+                  "sueldo": 100000,
+                  "bono": 30000,
+                  "sueldo_completo": 144700.0,
+                  "equipo": "azul"
+              },
+              {
+                  "nombre": "Cosme Fulanito",
+                  "goles_minimos": 5,
+                  "goles": 7,
+                  "sueldo": 20000,
+                  "bono": 10000,
+                  "sueldo_completo": 34400.0,
+                  "equipo": "azul"
+              },
+              {
+                  "nombre": "El Rulo",
+                  "goles_minimos": 10,
+                  "goles": 9,
+                  "sueldo": 30000,
+                  "bono": 15000,
+                  "sueldo_completo": 42450.0,
+                  "equipo": "rojo"
+              }
+            ]
+
++ Response 422
+
+    + Headers
+
+            Accept: application/vnd.atipica.v1+json
+
+    + Body
+
+            {
+              "errors": [
+                {
+                  "type": "invalid",
+                  "code": "422",
+                  "message": "El formato del json es incorrecto",
+                  "href": "https://cases.creditar.io/api/documentation#err-100"
+                }
+              ]
+            }

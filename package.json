@@ -1,0 +1,11 @@
+{
+  "name": "resuelve_fc_api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:KarenVentura/fc-api.git",
+  "author": "Karen Ventura <akv802@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "aglio": "^2.3.0"
+  }
+}
