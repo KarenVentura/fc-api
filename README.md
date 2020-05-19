@@ -1,24 +1,25 @@
-# README
+FC - Rails API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Getting started, run this API locally!
 
-Things you may want to cover:
+FC is a Rails API running on Ruby 2.7.1 and Rails 6.0.3
 
-* Ruby version
+To get started you will need to install Ruby in your system. The easy way to do this, is with a ruby versions handler.
 
-* System dependencies
+Installing rbenv, follow the instrucctions inside the next link:
+[RBENV](https://github.com/rbenv/rbenv)
 
-* Configuration
+Run the next commands
 
-* Database creation
+> rbenv install 2.7.1
+> rbenv local 2.7.1
+> gem install bundler
 
-* Database initialization
+Go to your terminal and inside of this project run:
 
-* How to run the test suite
+> bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+Then run the server
+> rails server
 
-* Deployment instructions
-
-* ...
+Your app is ready, running on http://localhost:3000/
