@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://localhost:3000
+HOST: https://resuelve-fc-api.herokuapp.com
 
 # FC API
 
@@ -10,13 +10,12 @@ La FC API te permite calcular el salario total de los jugadores del FC
 
 ## Salarios [/jugadores/salarios]
 
-### Actualizar Salarios [PATCH]
+### Obtener Salarios [GET]
 
 El sueldo de los jugadores del Resuelve FC se compone de dos partes un sueldo fijo y un bono variable.
-La suma de estas dos partes es el sueldo de un jugador. El bono variable se compone de dos partes meta,
-de goles individual y meta de goles por equipo cada una tiene un peso de 50%.
+La suma de estas dos partes es el sueldo de un jugador.
 
-Este endpoint te permitirá hacer el cálculo del sueldo de los jugadores del Resuelve FC
+Este endpoint te permitirá obtener el sueldo de los jugadores del Resuelve FC
 
 + Request (application/json)
     + Headers
@@ -126,8 +125,25 @@ Este endpoint te permitirá hacer el cálculo del sueldo de los jugadores del Re
                 {
                   "type": "invalid",
                   "code": "422",
-                  "message": "El formato del json es incorrecto",
-                  "href": "https://cases.creditar.io/api/documentation#err-100"
+                  "message": "Estructura del JSON incorrecta, favor de verificar los valores"
+                }
+              ]
+            }
+
++ Response 500
+
+    + Headers
+
+            Accept: application/vnd.atipica.v1+json
+
+    + Body
+
+            {
+              "errors": [
+                {
+                  "type": "error interno",
+                  "code": "500",
+                  "message": "Error interno en el servidor. Estamos solucionando el problema, porfavor regresa más tarde"
                 }
               ]
             }

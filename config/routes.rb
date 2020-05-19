@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     resource :salary, only: [:update], path: "jugadores/salarios"
   end
 
+  get '', :to => redirect('/documentation.html')
   match "*path", to: "route_errors#verify_error", via: :all
 end
