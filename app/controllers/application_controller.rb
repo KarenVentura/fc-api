@@ -7,6 +7,6 @@ class ApplicationController < ActionController::API
   def verify_content_type
     return if request.headers['Content-Type'] == 'application/json'
 
-    render json: { errors: [ { "type": "invalido", "message": "Media type no soportado" } ] }, status: :unsupported_media_type
+    render json: { errors: [ { "type": "inválido", "message": "Media type no soportado" } ] }, status: :unsupported_media_type
   end
 end

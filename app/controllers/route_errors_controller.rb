@@ -15,13 +15,13 @@ class RouteErrorsController < ApplicationController
 
   def fourth_zero_fourth
     render json: {
-      errors: [ { "type": "invalido", "message": "Ruta no encontrada, porfavor verifique que la ruta sea la correcta" } ]
+      errors: [ { "type": "inválido", "message": "Ruta no encontrada, porfavor verifique que la ruta sea la correcta" } ]
     }, status: :not_found
   end
 
   def  fourth_twenty_two
     render json: {
-      errors: [ { "type": "invalido", "message": "Version no soportada, por el momento solo puedes acceder a la version 1" } ]
+      errors: [ { "type": "inválido", "message": "Version no soportada, por el momento solo puedes acceder a la version 1" } ]
     }, status: :unprocessable_entity
   end
 

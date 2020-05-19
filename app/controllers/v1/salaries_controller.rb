@@ -23,7 +23,7 @@ module V1
       JSON::Validator.validate!(schema, player_params.to_json, :list => true)
     rescue => exception
       render json: {
-        errors: [ { "type": "invalido", "message": "Estructura del JSON incorrecta, favor de verificar los valores" } ]
+        errors: [ { "type": "inválido", "message": "Estructura del JSON incorrecta, favor de verificar los valores" } ]
       }, status: :unprocessable_entity
     end
   end
