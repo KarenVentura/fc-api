@@ -19,7 +19,7 @@ class SalaryCalculator
   end
 
   def individual_goal_percentage
-     (100.0 / goals_per_level[level_key]).truncate(2) * player.goles
+     (100.0 / goals_per_level.minimum_required(level_key)).truncate(2) * player.goles
   end
 
   def goal_per_team_percentage
@@ -35,6 +35,6 @@ class SalaryCalculator
   end
 
   def goals_per_level
-    @goals_per_level ||= GoalsPerLevel.fetch
+    @goals_per_level ||= GoalsPerLevel.new
   end
 end

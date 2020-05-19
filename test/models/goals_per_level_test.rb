@@ -1,14 +1,9 @@
 require "test_helper"
 
 class GoalsPerLevelTest < ActiveSupport::TestCase
-  test "fetch a hash with goals per level" do
-    assert_equal Hash, GoalsPerLevel.fetch.class
-    assert_equal goals_level, GoalsPerLevel.fetch
-  end
-
   test "fetch minimum goals by specific level" do
-    assert_equal 15, GoalsPerLevel.minimum_goals_per_level(:C)
-    assert_equal 5, GoalsPerLevel.minimum_goals_per_level(:A)
+    assert_equal 15, GoalsPerLevel.new.minimum_required(:C)
+    assert_equal 5, GoalsPerLevel.new.minimum_required(:A)
   end
 
   def goals_level

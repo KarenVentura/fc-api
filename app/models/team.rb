@@ -11,15 +11,15 @@ class Team
     params.each do |player|
       player = player.with_indifferent_access
       name = player[:equipo]
-      player_level = player[:nivel].to_sym
+      player_level = player[:nivel]
 
       if teams[name].present?
         teams[name][:goals_scored] = teams[name][:goals_scored] + player[:goles]
-        teams[name][:goals_to_score] = teams[name][:goals_to_score] + goals_per_level[player_level]
+        teams[name][:goals_to_score] = teams[name][:goals_to_score] + goals_per_level.minimum_required(player_level)
       else
         teams[name] = {}
         teams[name][:goals_scored] = player[:goles]
-        teams[name][:goals_to_score] = goals_per_level[player_level]
+        teams[name][:goals_to_score] = goals_per_level.minimum_required(player_level)
       end
     end
   end
@@ -29,6 +29,6 @@ class Team
   end
 
   def goals_per_level
-    @goals_per_level ||= GoalsPerLevel.fetch
+    @goals_per_level ||= GoalsPerLevel.new
   end
 end

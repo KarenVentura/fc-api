@@ -27,6 +27,6 @@ class CalculatePlayersSalariesService
   end
 
   def minimum_goals_per_level(level)
-    GoalsPerLevel.minimum_goals_per_level(level.to_sym)
+    GoalsPerLevel.new.minimum_required(level.to_sym)
   end
 end

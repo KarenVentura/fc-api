@@ -1,14 +1,14 @@
 class GoalsPerLevel
-  def self.fetch
+  def minimum_required(level)
+    goals_per_level[level.to_sym]
+  end
+
+  def goals_per_level
     {
       A: 5,
       B: 10,
       C: 15,
       Cuauh: 20
     }
-  end
-
-  def self.minimum_goals_per_level(level)
-    fetch[level]
   end
 end
