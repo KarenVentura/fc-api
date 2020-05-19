@@ -5,8 +5,15 @@ module V1
     before_action :validate_schema
 
     def index
-      response = CalculatePlayersSalariesService.new(player_params).fetch
-      render json: response.as_json , status: :ok
+      response = CalculatePlayersSalariesService.new(player_params).execute
+
+      if response.success?
+        render json: response.as_json, status: :ok
+      else
+        render json: {
+          errors: [ { "type": "error interno", "message": "Error interno en el servidor. Estamos solucionando el problema, porfavor regresa más tarde" } ]
+        }, status: :internal_server_error
+      end
     end
 
     def player_params

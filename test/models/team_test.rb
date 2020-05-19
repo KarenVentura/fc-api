@@ -6,11 +6,11 @@ class TeamTest < ActiveSupport::TestCase
   end
 
   test "fetch the Azul team score data" do
-    assert_equal azul_team_score_data, @team.fetch("azul")
+    assert_equal azul_team_score_data, @team.find_by_name("azul")
   end
 
   test "fetch the rojo team score data" do
-    assert_equal rojo_team_score_data, @team.fetch("rojo")
+    assert_equal rojo_team_score_data, @team.find_by_name("rojo")
   end
 
   def azul_team_score_data

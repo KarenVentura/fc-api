@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
-  include InternalErrorExceptionHandler
   before_action :verify_content_type
 
   def verify_content_type
