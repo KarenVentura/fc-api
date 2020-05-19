@@ -4,7 +4,7 @@ module V1
   class SalariesController < ApplicationController
     before_action :validate_schema
 
-    def update
+    def index
       response = CalculatePlayersSalariesService.new(player_params).fetch
       render json: response.as_json , status: :ok
     end
