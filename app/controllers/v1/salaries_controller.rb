@@ -27,8 +27,8 @@ module V1
         "required" => ["nombre", "nivel", "goles", "sueldo", "bono", "sueldo_completo", "equipo"],
         "properties" => {
           "goles" => { "type" => "integer"},
-          "sueldo" => { "type" => "float"},
-          "bono" => { "type" => "float"}
+          "sueldo" => { "type" => "number"},
+          "bono" => { "type" => "number"}
         }
       }
 
