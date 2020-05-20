@@ -1,15 +1,16 @@
 # FC - Rails API
 
-Getting started, run this API locally!
+Comenzemos, corre esta API localmente!
 
-# FC is a Rails API running on Ruby 2.7.1 and Rails 6.0.3
+# FC es una API en Ruby on Rails API con la versión de Ruby 2.7.1 y Rails 6.0.3
 
-To get started you will need to install Ruby in your system. The easy way to do this, is with a ruby versions handler.
+Para comenzar necesitaras instalar Ruby en tu sistema. La forma más facil de hacerlo es con un manejador de versions de Ruby.
 
-Installing rbenv, follow the instrucctions inside the next link:
+El manejador de las versiones de Ruby que usaremos se llama rbenv, sigue las instrucciones en el siguiente link:
+
 [RBENV](https://github.com/rbenv/rbenv)
 
-Run the next commands
+Una vez que tenemos instalado rbenv, necesitamos instalar ruby, corre lo siguiente:
 
 `rbenv install 2.7.1`
 
@@ -17,15 +18,16 @@ Run the next commands
 
 `gem install bundler`
 
-Go to your terminal and inside of this project run:
+Ahora clona el proyecto. Una vez dentro de la carpeta corre lo siguiente:
 
 `bundle install`
 
-Then run the server
+Todas las dependencias fueron instaladas, ahora ya puedes correr el servidor, para esto debes estar dentro de la carpeta del proyecto.
+
 `rails server`
 
-Your app is ready, running on http://localhost:3000/
+Tu instalación está lista y corre en http://localhost:3000/
 
-# If you want to check it out running on producction go:
+# Si quieres checar la api corriendo en producción, ve aquí:
 
 [FC-API](https://resuelve-fc-api.herokuapp.com/)
