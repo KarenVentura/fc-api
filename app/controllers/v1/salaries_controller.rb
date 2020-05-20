@@ -8,7 +8,7 @@ module V1
       response = CalculatePlayersSalariesService.new(player_params).execute
 
       if response.success?
-        render json: response.as_json, status: :ok
+        render json: response.entity.as_json, status: :ok
       else
         render json: {
           errors: [ { "type": "error interno", "message": "Error interno en el servidor. Estamos solucionando el problema, porfavor regresa más tarde" } ]
@@ -32,7 +32,7 @@ module V1
         }
       }
 
-      JSON::Validator.validate!(schema, player_params.to_json, :list => true)
+      JSON::Validator.validate!(schema, player_params.as_json, :list => true)
     rescue => exception
       render json: {
         errors: [ { "type": "inválido", "message": "Estructura del JSON incorrecta, favor de verificar los valores" } ]

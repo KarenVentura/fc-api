@@ -9,7 +9,7 @@ class SalaryCalculatorTest < ActiveSupport::TestCase
     juan_perez_params = players.first
     player = Player.new(juan_perez_params)
 
-    player_team_scores = @team.fetch(player.equipo)
+    player_team_scores = @team.find_by_name(player.equipo)
     assert_equal 67825.0 , SalaryCalculator.new(player, player_team_scores).total_salary
   end
 
@@ -17,7 +17,7 @@ class SalaryCalculatorTest < ActiveSupport::TestCase
     rulo_params = players.fourth
     player = Player.new(rulo_params)
 
-    player_team_scores = @team.fetch(player.equipo)
+    player_team_scores = @team.find_by_name(player.equipo)
     assert_equal 42450 , SalaryCalculator.new(player, player_team_scores).total_salary
   end
 
@@ -25,7 +25,7 @@ class SalaryCalculatorTest < ActiveSupport::TestCase
     cuau_params = players.second
     player = Player.new(cuau_params)
 
-    player_team_scores = @team.fetch(player.equipo)
+    player_team_scores = @team.find_by_name(player.equipo)
     assert_equal 144700 , SalaryCalculator.new(player, player_team_scores).total_salary
   end
 end

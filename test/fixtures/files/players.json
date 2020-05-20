@@ -1,21 +1,21 @@
 [
   {
-     "nombre":"Juan Perez",
-     "nivel":"C",
-     "goles":10,
-     "sueldo":50000,
-     "bono":25000,
-     "sueldo_completo":null,
-     "equipo":"rojo"
+     "nombre": "Juan Perez",
+     "nivel": "C",
+     "goles": 10,
+     "sueldo": 50000,
+     "bono": 25000,
+     "sueldo_completo": null,
+     "equipo": "rojo"
   },
   {
-     "nombre":"EL Cuauh",
-     "nivel":"Cuauh",
-     "goles":30,
-     "sueldo":100000,
-     "bono":30000,
-     "sueldo_completo":null,
-     "equipo":"azul"
+     "nombre": "EL Cuauh",
+     "nivel": "Cuauh",
+     "goles": 30,
+     "sueldo": 100000,
+     "bono": 30000,
+     "sueldo_completo": null,
+     "equipo": "azul"
   },
   {
      "nombre": "Cosme Fulanito",
@@ -35,6 +35,5 @@
      "bono": 15000,
      "sueldo_completo": null,
      "equipo":"rojo"
-
   }
 ]
