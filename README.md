@@ -32,6 +32,6 @@ Verifica que las pruebas estén verdes con el siguiente comando:
 
 `rails test`
 
-# Si quieres checar la api corriendo en producción, ve aquí:
+# Para leer la documentación de la api y usarla ve aquí:
 
 [FC-API](https://resuelve-fc-api.herokuapp.com/)
