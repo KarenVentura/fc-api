@@ -1,8 +1,8 @@
-FC - Rails API
+# FC - Rails API
 
 Getting started, run this API locally!
 
-FC is a Rails API running on Ruby 2.7.1 and Rails 6.0.3
+# FC is a Rails API running on Ruby 2.7.1 and Rails 6.0.3
 
 To get started you will need to install Ruby in your system. The easy way to do this, is with a ruby versions handler.
 
@@ -25,3 +25,7 @@ Then run the server
 `rails server`
 
 Your app is ready, running on http://localhost:3000/
+
+# If you want to check it out running on producction go:
+
+[FC-API](https://resuelve-fc-api.herokuapp.com/)
