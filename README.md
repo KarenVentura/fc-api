@@ -28,6 +28,10 @@ Todas las dependencias fueron instaladas, ahora ya puedes correr el servidor, pa
 
 Tu instalación está lista y corre en http://localhost:3000/
 
+Verifica que las pruebas estén verdes con el siguiente comando:
+
+`rails test`
+
 # Si quieres checar la api corriendo en producción, ve aquí:
 
 [FC-API](https://resuelve-fc-api.herokuapp.com/)
