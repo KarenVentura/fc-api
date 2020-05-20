@@ -23,11 +23,30 @@ class V1::SalariesControllerTest < ActionDispatch::IntegrationTest
     assert_equal validate_media_type_header, parsed_response
   end
 
+  test "calculate players salaries, but players is empty" do
+    get "/jugadores/salarios",
+    headers: { "Accept" => "application/vnd.fc.v1+json", "Content-Type" => "application/json" },
+    params: {  "_json" => [] }
+
+
+    parsed_response = JSON.parse(@response.body)
+    assert_equal empty_players_response, parsed_response
+  end
+
   def validate_schema_error
     { "errors" =>
       [{
         "type" => "inválido",
         "message" => "Estructura del JSON incorrecta, favor de verificar los valores"
+      }]
+    }
+  end
+
+  def empty_players_response
+    { "errors" =>
+      [{
+        "type" => "inválido",
+        "message" => "Agrega jugadores para calcular el salario"
       }]
     }
   end

@@ -3,6 +3,7 @@
 module V1
   class SalariesController < ApplicationController
     before_action :validate_schema
+    before_action :validate_empty_params
 
     def index
       response = CalculatePlayersSalariesService.new(player_params).execute
@@ -37,6 +38,14 @@ module V1
       render json: {
         errors: [ { "type": "inválido", "message": "Estructura del JSON incorrecta, favor de verificar los valores" } ]
       }, status: :unprocessable_entity
+    end
+
+    def validate_empty_params
+      if player_params.empty?
+        render json: {
+          errors: [ { "type": "inválido", "message": "Agrega jugadores para calcular el salario" } ]
+        }, status: :unprocessable_entity
+      end
     end
   end
 end
